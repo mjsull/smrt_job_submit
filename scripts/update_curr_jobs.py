@@ -4,7 +4,6 @@ import os
 import sys
 import urllib2
 import _mysql
-from Crypto.Cipher import AES
 
 def get_jobs(pp_path):
     pattern = re.compile("^[A-Za-z]{2}_[0-9]{5}_[0-9][A-Za-z]")
@@ -21,12 +20,18 @@ def get_jobs(pp_path):
         whenStarted = line.split('","')
         if jobStatus == 'Completed' and not pattern.match(name) is None and not jobId in jobs_run:
             to_submit.add((jobId, name))
-    with open('hash') as pw:
-        the_thing = pw.readline().rstrip()
-        obj2 = AES.new('thepurplegiraffe')
-        the_thing = obj2.decrypt(the_thing)
-        the_thing = the_thing[:10]
-    db = _mysql.connect(host="db.hpc.mssm.edu",user="pathogendb_ro",passwd=the_thing,db="vanbah01_pathogens")
+    path = os.path.expanduser('~') + '/.my.cnf'
+    with open(path) as cnf_file:
+        for line in cnf_file:
+            if line.startswith('user='):
+                user = line.rstrip()[5:]
+            if line.startswith('password='):
+                pw = line.rstrip()[9:]
+            if line.startswith('host='):
+                host = line.rstrip()[5:]
+            if line.startswith('database='):
+                database = line.rstrip()[9:]
+    db = _mysql.connect(host=host,user=user,passwd=pw,db=database)
     to_q = []
     rejected = []
     for i in to_submit:
