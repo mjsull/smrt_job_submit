@@ -38,6 +38,7 @@ def get_jobs(pp_path):
         with open('data/jobs_run', 'a') as jr:
             jr.write(i[0] + '\n')
         smrtjob, sample = i
+        smrtjob = smrtjob.zfill(6)
         sample = sample[:2] + sample[3:8] + '.' + sample[9:11]
         try:
             db.query("""select STOCK_ID from tExtracts where EXTRACT_ID='""" + sample + "'")
