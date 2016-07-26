@@ -53,7 +53,7 @@ def get_jobs(pp_path):
             db.query("select abbreviated_name from tOrganisms where ORGANISM_ID='" + organism_id + "'")
             val = db.store_result()
             species = val.fetch_row()[0][0]
-            if species == 'MRSA':
+            if species == 'MRSA' or species == 'MSSA':
                 species = 'S_aureus'
         except IndexError:
             rejected.append(i[1])
