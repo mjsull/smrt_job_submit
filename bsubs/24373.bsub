@@ -1,0 +1,14 @@
+#!/bin/bash
+#BSUB -J 024373
+#BSUB -P acc_InfectiousDisease
+#BSUB -q premium
+#BSUB -n 4
+#BSUB -R span[hosts=1]
+#BSUB -R rusage[mem=4000]
+#BSUB -W 23:00
+#BSUB -m "bode mothra"
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -L /bin/bash
+cd /hpc/users/sullim11/scripts/pathogendb-pipeline
+./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/ER05447_3A_024373 SMRT_JOB_ID=024373 STRAIN_NAME=ER05447_3A SPECIES=S_pyogenes prokka_to_igb
