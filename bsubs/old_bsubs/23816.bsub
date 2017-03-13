@@ -1,5 +1,5 @@
 #!/bin/bash
-#BSUB -J 023713
+#BSUB -J 024185
 #BSUB -P acc_InfectiousDisease
 #BSUB -q premium
 #BSUB -n 4
@@ -11,4 +11,4 @@
 #BSUB -eo %J.stderr
 #BSUB -L /bin/bash
 cd /hpc/users/sullim11/scripts/pathogendb-pipeline
-./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/PS00016_1A_023713 SMRT_JOB_ID=023713 STRAIN_NAME=PS00016_1A SPECIES=MSSA prokka_to_igb
+./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/PS00041_1A_023816 SMRT_JOB_ID=023816 STRAIN_NAME=PS00041_1A SPECIES=S_aureus prokka_to_igb
