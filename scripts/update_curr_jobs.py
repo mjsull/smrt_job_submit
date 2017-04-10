@@ -82,7 +82,7 @@ def get_jobs(pp_path):
                '#BSUB -L /bin/bash\n'
                'cd ' + pp_path + '\n'
                './post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/' + sample + '_' + smrtjob +
-               ' SMRT_JOB_ID=' + smrtjob + ' STRAIN_NAME=' + sample + ' SPECIES=' + species + ' prokka_to_igb\n')
+               ' SMRT_JOB_ID=' + smrtjob + ' STRAIN_NAME=' + sample + ' SPECIES=' + species + ' LSF_DISABLED=1 CLUSTER=BASH prokka_to_igb\n')
         subprocess.Popen('git add bsubs/' + i[0] + '.bsub', shell=True).wait()
         subprocess.Popen('bsub < ' + 'bsubs/' + i[0] + '.bsub', shell=True).wait()
     if len(to_q) + len(rejected) >= 1:
