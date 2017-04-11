@@ -76,7 +76,7 @@ def get_jobs(pp_path):
                '#BSUB -R span[hosts=1]\n'
                '#BSUB -R rusage[mem=4000]\n'
                '#BSUB -W 23:00\n'
-               '#BSUB -m "bode mothra"\n'
+               '#BSUB -m mothra\n'
                '#BSUB -o %J.stdout\n'
                '#BSUB -eo %J.stderr\n'
                '#BSUB -L /bin/bash\n'
