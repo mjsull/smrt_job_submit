@@ -1,0 +1,14 @@
+#!/bin/bash
+#BSUB -J 026618
+#BSUB -P acc_InfectiousDisease
+#BSUB -q premium
+#BSUB -n 4
+#BSUB -R span[hosts=1]
+#BSUB -R rusage[mem=4000]
+#BSUB -W 23:00
+#BSUB -m mothra
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -L /bin/bash
+cd /sc/orga/work/kumara22/pathogendb-pipeline
+./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/CD01862_2A_026618 SMRT_JOB_ID=026618 STRAIN_NAME=CD01862_2A SPECIES=C_difficile LSF_DISABLED=1 CLUSTER=BASH prokka_to_igb
