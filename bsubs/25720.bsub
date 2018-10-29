@@ -2,7 +2,7 @@
 #BSUB -J 025720
 #BSUB -P acc_InfectiousDisease
 #BSUB -q premium
-#BSUB -n 4
+#BSUB -n 12
 #BSUB -R span[hosts=1]
 #BSUB -R rusage[mem=4000]
 #BSUB -W 23:00

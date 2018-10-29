@@ -1,0 +1,14 @@
+#!/bin/bash
+#BSUB -J 024820
+#BSUB -P acc_InfectiousDisease
+#BSUB -q premium
+#BSUB -n 4
+#BSUB -R span[hosts=1]
+#BSUB -R rusage[mem=4000]
+#BSUB -W 23:00
+#BSUB -m "bode mothra"
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -L /bin/bash
+cd /hpc/users/sullim11/scripts/pathogendb-pipeline
+./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/ER06896_3A_024820 SMRT_JOB_ID=024820 STRAIN_NAME=ER06896_3A SPECIES=P_aeruginosa prokka_to_igb

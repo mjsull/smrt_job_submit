@@ -2,13 +2,13 @@
 #BSUB -J 027002
 #BSUB -P acc_InfectiousDisease
 #BSUB -q premium
-#BSUB -n 4
+#BSUB -n 12
 #BSUB -R span[hosts=1]
 #BSUB -R rusage[mem=4000]
 #BSUB -W 23:00
 #BSUB -m bode mothra
-#BSUB -o %J.stdout
-#BSUB -eo %J.stderr
+#BSUB -o /hpc/users/kumara22/smrt_job_submit/27002.stdout
+#BSUB -eo /hpc/users/kumara22/smrt_job_submit/27002.stderr
 #BSUB -L /bin/bash
 cd /sc/orga/work/kumara22/pathogendb-pipeline
 ./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/CD01926_2B_027002 SMRT_JOB_ID=027002 STRAIN_NAME=CD01926_2B SPECIES=C_difficile LSF_DISABLED=1 CLUSTER=BASH prokka_to_igb

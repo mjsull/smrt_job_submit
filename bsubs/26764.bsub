@@ -6,7 +6,7 @@
 #BSUB -R span[hosts=1]
 #BSUB -R rusage[mem=4000]
 #BSUB -W 23:00
-#BSUB -m mothra
+#BSUB -m bode mothra
 #BSUB -o %J.stdout
 #BSUB -eo %J.stderr
 #BSUB -L /bin/bash

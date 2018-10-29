@@ -1,12 +1,11 @@
 #!/bin/bash
 #BSUB -J 024485
-#BSUB -P acc_InfectiousDisease
-#BSUB -q premium
-#BSUB -n 4
+#BSUB -m bashia02
+#BSUB -q private
+#BSUB -n 24
 #BSUB -R span[hosts=1]
 #BSUB -R rusage[mem=4000]
 #BSUB -W 23:00
-#BSUB -m bode mothra
 #BSUB -o %J.stdout
 #BSUB -eo %J.stderr
 #BSUB -L /bin/bash

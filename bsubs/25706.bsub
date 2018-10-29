@@ -1,0 +1,13 @@
+#!/bin/bash
+#BSUB -J 025706
+#BSUB -m bashia02
+#BSUB -q private
+#BSUB -n 24
+#BSUB -R span[hosts=1]
+#BSUB -R rusage[mem=4000]
+#BSUB -W 23:00
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -L /bin/bash
+cd /sc/orga/work/kumara22/pathogendb-pipeline
+./post-assemble-pathogen OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/PS00103_1A_25706 SMRT_JOB_ID=025706 STRAIN_NAME=PS00103_1A SPECIES=M_tuberculosis LSF_DISABLED=1 CLUSTER=BASH prokka_to_igb

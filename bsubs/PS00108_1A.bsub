@@ -1,0 +1,14 @@
+#!/bin/bash
+#BSUB -J 026025
+#BSUB -P acc_InfectiousDisease
+#BSUB -q premium
+#BSUB -n 12
+#BSUB -R span[hosts=1]
+#BSUB -R rusage[mem=1000]
+#BSUB -W 23:00
+#BSUB -m mothra
+#BSUB -o %J.stdout
+#BSUB -eo %J.stderr
+#BSUB -L /bin/bash
+cd /sc/orga/work/kumara22/pathogendb-pipeline
+./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/studies/chacko_Archive/PS00108_1A SMRT_JOB_ID=026025 STRAIN_NAME=PS00108_1A STRAIN_NAME=efaecium LSF_DISABLED=1 CLUSTER=BASH prokka_annotate

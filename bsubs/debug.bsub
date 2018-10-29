@@ -1,0 +1,14 @@
+#!/bin/bash
+#BSUB -J 026999
+#BSUB -P acc_InfectiousDisease
+#BSUB -q premium
+#BSUB -n 1
+#BSUB -R span[hosts=1]
+#BSUB -R rusage[mem=1000]
+#BSUB -W 1:00
+#BSUB -m bode mothra
+#BSUB -o /hpc/users/kumara22/smrt_job_submit/debug.stdout
+#BSUB -eo /hpc/users/kumara22/smrt_job_submit/debug.stderr
+#BSUB -L /bin/bash
+echo "ajay"
+
