@@ -1,5 +1,5 @@
 #!/bin/bash
-#BSUB -J 028369
+#BSUB -J 028373
 #BSUB -P acc_bashia02
 #BSUB -q private
 #BSUB -n 12
@@ -10,4 +10,4 @@
 #BSUB -eo %J.stderr
 #BSUB -L /bin/bash
 cd /sc/orga/work/kumara22/pathogendb-pipeline
-./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/CD02495_2A_028369 SMRT_JOB_ID=028369 STRAIN_NAME=CD02495_2A SPECIES=C_difficile LSF_DISABLED=1 CLUSTER=BASH igb_to_pathogendb
+./post-assemble-pathogen  OUT=/sc/orga/projects/InfectiousDisease/post-assembly-output/ER15890_8A_028373 SMRT_JOB_ID=028373 STRAIN_NAME=ER15890_8A SPECIES=S_aureus LSF_DISABLED=1 CLUSTER=BASH igb_to_pathogendb

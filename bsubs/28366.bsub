@@ -1,7 +1,7 @@
 #!/bin/bash
 #BSUB -J 028366
-#BSUB -P acc_InfectiousDisease
-#BSUB -q premium
+#BSUB -P acc_bashia02
+#BSUB -q private
 #BSUB -n 12
 #BSUB -R span[hosts=1]
 #BSUB -R rusage[mem=4000]
